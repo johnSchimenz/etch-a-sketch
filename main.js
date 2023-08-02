@@ -4,8 +4,8 @@ const twoDimensionalClassArray = [];
 let width = 0;
 let cellName = "";
 let counter = 0;
-let rowClassName = "";
 let columnClassName = "";
+let rowClassName = "";
 
 // Alert user to specify the side width
 do
@@ -31,20 +31,21 @@ for (let i = 0; i < width; i++)
 for (let i = 0; i < width; i++)
 {    
     const selectContainer = document.querySelector("#container");
-    const addRow = document.createElement("div");
-    rowClassName = "row" + i;
-    addRow.classList.add(rowClassName);
-    selectContainer.appendChild(addRow);
-    columnClassName = "div." + rowClassName;
+    const addColumn = document.createElement("div");
+    columnClassName = "column" + i;
+    addColumn.classList.add(columnClassName);
+    addColumn.classList.add("column-container");
+    selectContainer.appendChild(addColumn);
+    rowClassName = "div." + columnClassName;
 
     for (let j = 0; j < width; j++)
     {
-        const selectRow = document.querySelector(columnClassName);
-        const addColumn = document.createElement("div");
-        addColumn.classList.add(twoDimensionalClassArray[i][j]);
-        addColumn.classList.add("square");
-        selectRow.appendChild(addColumn);
-        rowClassName = twoDimensionalClassArray[i][j];
+        const selectColumn = document.querySelector(rowClassName);
+        const addRow = document.createElement("div");
+        addRow.classList.add(twoDimensionalClassArray[i][j]);
+        addRow.classList.add("square");
+        selectColumn.appendChild(addRow);
+        columnClassName = twoDimensionalClassArray[i][j];
     }
 }
 
@@ -54,16 +55,16 @@ for (let i = 0; i < width; i++)
     for (let j = 0; j < width; j++)
     {
         const selectContainer = document.querySelector("#container");
-        const addColumn = document.createElement("div");
-        addColumn.classList.add(twoDimensionalClassArray[i][j]);
-        addColumn.textContent = "C";
-        selectContainer.appendChild(addColumn);
-        rowClassName = twoDimensionalClassArray[i][j];
+        const addRow = document.createElement("div");
+        addRow.classList.add(twoDimensionalClassArray[i][j]);
+        addRow.textContent = "C";
+        selectContainer.appendChild(addRow);
+        columnClassName = twoDimensionalClassArray[i][j];
     }
-    console.log(rowClassName);
-    const selectDivForRow = document.querySelector(rowClassName);
-    const addRow = document.createElement("div");
-    addRow.classList.add(rowClassName);
+    console.log(columnClassName);
+    const selectDivForRow = document.querySelector(columnClassName);
+    const addColumn = document.createElement("div");
+    addColumn.classList.add(columnClassName);
     select
 }
 */
@@ -76,10 +77,10 @@ for (let j = 0; j < width; j++)
     for (let i = 0; i < width; i++)
     {
         const selectContainer = document.querySelector("#container");
-        const addRow = document.createElement("div");
-        addRow.classList.add("row");
-        addRow.textContent = "R";
-        selectContainer.appendChild(addRow);
+        const addColumn = document.createElement("div");
+        addColumn.classList.add("row");
+        addColumn.textContent = "R";
+        selectContainer.appendChild(addColumn);
     }
 }
 /*
