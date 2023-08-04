@@ -1,13 +1,3 @@
-body
-{
-
-}
-
-#title
-{
-
-}
-
 #container
 {
     width: 400px;
@@ -16,11 +6,6 @@ body
     border-color: red;
     display: flex;
     flex-wrap: wrap;
-}
-
-#bottom
-{
-
 }
 
 .square
