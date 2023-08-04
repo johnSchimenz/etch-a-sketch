@@ -1,6 +1,7 @@
 // Variable and array declarations
 
 const twoDimensionalClassArray = [];
+
 let widthCell = 0;
 let cellName = "";
 let counter = 0;
@@ -27,14 +28,22 @@ for (let i = 0; i < widthCell; i++)
 }
 
 // Create all the squares
-
 for (let i = 0; i < widthCell * widthCell; i++)
 {    
     const selectContainer = document.querySelector("#container");
     const addCell = document.createElement("div");
     addCell.classList.add("square");
-    addCell.style.width = (400 / widthCell) + "px"; // Maybe revert this
-    addCell.style.height = (400 / widthCell) + "px"; // Maybe revert this
+    addCell.style.width = (400 / widthCell) + "px";
+    addCell.style.height = (400 / widthCell) + "px";
     selectContainer.appendChild(addCell);
-    rowClassName = "div." + columnClassName;
 }
+
+// Change square color if hover over - TODO
+const draw = document.querySelectorAll("div.square");
+draw.forEach((element) =>
+{
+    element.addEventListener("mouseover", () => 
+    {
+        element.style.background = "black";
+    });
+});
