@@ -38,7 +38,7 @@ for (let i = 0; i < widthCell * widthCell; i++)
     selectContainer.appendChild(addCell);
 }
 
-// Change square color if hover over - TODO
+// Change square color if hover over
 const draw = document.querySelectorAll("div.square");
 draw.forEach((element) =>
 {
@@ -46,4 +46,11 @@ draw.forEach((element) =>
     {
         element.style.background = "black";
     });
+});
+
+// Reset for blank Etch-A-Sketch Pad
+const reset = document.querySelector("button");
+reset.addEventListener("click", () =>
+{
+    location.reload();
 });
